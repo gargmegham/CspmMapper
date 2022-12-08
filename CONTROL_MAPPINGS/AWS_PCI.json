@@ -1,0 +1,62 @@
+{
+    "Requirement 1 - Firewalls": [
+        "Excessive Security Groups",
+        "Detect EC2 Classic Instances",
+        "RDS Publicly Accessible",
+        "Default Security Group",
+        "Redshift Publicly Accessible",
+        "Open All Ports Protocols",
+        "Cross VPC Public Private Communication"
+    ],
+    "Requirement 2 - Defaults": [
+        "KMS Default Key Usage"
+    ],
+    "Requirement 3 - Cardholder Data": [
+        "RDS Encryption Enabled",
+        "KMS Key Rotation",
+        "EBS Encryption Enabled",
+        "SQS Encrypted",
+        "SSM Encrypted Parameters"
+    ],
+    "Requirement 4 - Encrypted Transmission": [
+        "Insecure Ciphers",
+        "Insecure CloudFront Protocols"
+    ],
+    "Requirement 6 - Secure Systems": [
+        "Config Service Enabled"
+    ],
+    "Requirement 7 - Restrict Access": [
+        "S3 Bucket All Users Policy",
+        "Root Account In Use",
+        "IAM User Admins",
+        "SQS Cross Account Access",
+        "S3 Bucket All Users ACL"
+    ],
+    "Requirement 8 - Identify Access": [
+        "Minimum Password Length",
+        "Password Requires Symbols",
+        "Maximum Password Age",
+        "Password Reuse Prevention",
+        "Root MFA Enabled",
+        "Users MFA Enabled",
+        "Access Keys Rotated",
+        "Access Keys Last Used",
+        "Password Expiration",
+        "Password Requires Lowercase",
+        "Password Requires Numbers",
+        "Password Requires Uppercase",
+        "Users Password Last Used"
+    ],
+    "Requirement 10 - Track Access": [
+        "CloudTrail Enabled",
+        "CloudTrail Bucket Access Logging",
+        "VPC Flow Logs Enabled",
+        "ELB Logging Enabled",
+        "CloudFront Logging Enabled",
+        "S3 Bucket Logging",
+        "Transfer Logging Enabled"
+    ],
+    "Requirement 11 - Test Systems": [
+        "RDS Restorable"
+    ]
+}

@@ -1,0 +1,34 @@
+{
+    "Requirement 1 - Firewalls": [
+        "SQL Server Firewall Rule Alerts Monitor",
+        "Virtual Network Alerts Monitor",
+        "Network Access Default Action",
+        "Default Security Group",
+        "Open All Ports"
+    ],
+    "Requirement 3 - Cardholder Data": [
+        "Storage Accounts Encryption",
+        "VM OS Disk Encryption",
+        "VM Data Disk Encryption"
+    ],
+    "Requirement 4 - Encrypted Transmission": [
+        "Storage Accounts HTTPS",
+        "HTTPS Only Enabled",
+        "Detect Insecure Custom Origin"
+    ],
+    "Requirement 5 - Anti-Virus and Malware": [
+        "VM Endpoint Protection"
+    ],
+    "Requirement 7 - Restrict Access": [
+        "File Service All Access ACL",
+        "Table Service All Access ACL",
+        "Queue Service All Access ACL",
+        "Blob Container Private Access",
+        "Authentication Enabled",
+        "Open All Ports"
+    ],
+    "Requirement 8 - Identify Access": [
+        "Blob Container Private Access",
+        "Authentication Enabled"
+    ]
+}

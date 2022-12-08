@@ -1,0 +1,31 @@
+{
+    "Requirement 1 - Firewalls": [
+        "Excessive Firewall Rules",
+        "Open All Ports"
+    ],
+    "Requirement 2 - Defaults": [
+        "Default VPC In Use"
+    ],
+    "Requirement 3 - Cardholder Data": [
+        "Key Rotation",
+        "CSEK Encryption Enabled"
+    ],
+    "Requirement 4 - Encrypted Transmission": [
+        "CLB HTTPS Only",
+        "Database SSL Enabled"
+    ],
+    "Requirement 6 - Secure Systems": [
+        "OS Login Enabled"
+    ],
+    "Requirement 7 - Restrict Access": [
+        "VM Instances Least Privilege"
+    ],
+    "Requirement 10 - Track Access": [
+        "Project Ownership Logging",
+        "Storage Permissions Logging",
+        "VPC Network Logging"
+    ],
+    "Requirement 11 - Test Systems": [
+        "DB Restorable"
+    ]
+}

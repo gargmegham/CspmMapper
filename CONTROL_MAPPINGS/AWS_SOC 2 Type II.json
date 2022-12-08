@@ -1,0 +1,131 @@
+{
+    "CC6.1": [
+        "Open SSH",
+        "Root Access Keys",
+        "S3 Bucket All Users Policy",
+        "RDS Encryption Enabled",
+        "RDS Publicly Accessible",
+        "Root Account In Use",
+        "No User IAM Policies",
+        "CloudTrail Encryption",
+        "Default Security Group",
+        "SNS Topic Policies",
+        "Redshift Encryption Enabled",
+        "Redshift Publicly Accessible",
+        "Encrypted AMI",
+        "Open All Ports Protocols",
+        "EBS Encryption Enabled",
+        "IAM User Admins",
+        "SQS Encrypted",
+        "Users Password Last Used",
+        "S3 Bucket All Users ACL",
+        "KMS Key Policy",
+        "DynamoDB KMS Encryption",
+        "Lambda Public Access",
+        "EFS Encryption Enabled",
+        "EKS Private Endpoint",
+        "IAM Role Policies",
+        "RDS Snapshot Encryption",
+        "S3 Bucket Encryption",
+        "ElasticSearch Encrypted Domain",
+        "ElasticSearch Node To Node Encryption",
+        "S3 Bucket Public Access Block",
+        "S3 Bucket Enforce Object Encryption",
+        "DMS Encryption Enabled"
+    ],
+    "CC6.2": [
+        "Access Keys Rotated",
+        "Access Keys Last Used",
+        "SSH Keys Rotated",
+        "Password Expiration"
+    ],
+    "CC6.3": [
+        "Password Expiration",
+        "IAM Role Policies"
+    ],
+    "CC6.6": [
+        "Open FTP",
+        "Open SSH",
+        "Open Telnet",
+        "Open SMTP",
+        "Open DNS",
+        "Open RPC",
+        "Open NetBIOS",
+        "Open SMBoTCP",
+        "Open CIFS",
+        "Open SQL Server",
+        "Open RDP",
+        "Open MySQL",
+        "Open PostgreSQL",
+        "Open VNC Client",
+        "Open VNC Server",
+        "Root MFA Enabled",
+        "Detect EC2 Classic Instances",
+        "Instance IAM Role",
+        "Open All Ports Protocols",
+        "IAM User Admins",
+        "Open Oracle",
+        "Open Kibana",
+        "Open Hadoop HDFS NameNode Metadata Service",
+        "Open Hadoop HDFS NameNode WebUI",
+        "Root Hardware MFA",
+        "Open Salt",
+        "Open Docker"
+    ],
+    "CC6.7": [
+        "RDS Encryption Enabled",
+        "Redshift Encryption Enabled",
+        "Encrypted AMI",
+        "ELB HTTPS Only",
+        "EBS Encryption Enabled",
+        "SQS Encrypted",
+        "DynamoDB KMS Encryption",
+        "EFS Encryption Enabled",
+        "Workgroup Encrypted",
+        "RDS Snapshot Encryption",
+        "S3 Bucket Encryption",
+        "ElasticSearch Encrypted Domain",
+        "ElasticSearch Node To Node Encryption",
+        "ElasticSearch HTTPS Only",
+        "S3 Bucket Enforce Object Encryption",
+        "DMS Encryption Enabled",
+        "ELBv2 HTTPS Only"
+    ],
+    "CC6.8": [
+        "Config Service Enabled",
+        "CloudTrail Bucket Access Logging"
+    ],
+    "CC7.1": [
+        "CloudTrail Enabled"
+    ],
+    "CC7.2": [
+        "GuardDuty is Enabled"
+    ],
+    "CC7.3": [
+        "CloudTrail Enabled",
+        "GuardDuty is Enabled"
+    ],
+    "CC8.1": [
+        "Config Service Enabled"
+    ],
+    "A1.1": [
+        "Elastic IP Limit",
+        "VPC Elastic IP Limit",
+        "Instance Limit",
+        "Instance vCPU On-Demand Based Limits"
+    ],
+    "A1.2": [
+        "RDS Automated Backups"
+    ],
+    "CC2.1": [
+        "CloudTrail Enabled",
+        "CloudTrail To CloudWatch",
+        "CloudWatch Monitoring Metrics"
+    ],
+    "CC5.1": [
+        "SNS Topic Policies",
+        "SQS Cross Account Access",
+        "KMS Key Policy",
+        "IAM Role Policies"
+    ]
+}

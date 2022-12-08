@@ -1,0 +1,110 @@
+{
+    "CC6.1": [
+        "Storage Accounts Encryption",
+        "VM OS Disk Encryption",
+        "VM Data Disk Encryption",
+        "Table Service All Access ACL",
+        "Queue Service All Access ACL",
+        "Monitor Disk Encryption",
+        "Open SSH",
+        "Network Access Default Action",
+        "Authentication Enabled",
+        "Default Security Group",
+        "Monitor SQL Encryption",
+        "Open All Ports",
+        "Log Storage Encryption",
+        "Log Container Public Access",
+        "Monitor Blob Encryption",
+        "File Service Encryption",
+        "Blob Service Encryption",
+        "SQL Server Public Access",
+        "Storage Accounts AAD Enabled",
+        "Ensure No Guest User"
+    ],
+    "CC6.2": [
+        "Key Expiration Enabled",
+        "Ensure No Guest User"
+    ],
+    "CC6.3": [
+        "Key Expiration Enabled",
+        "No Custom Owner Roles"
+    ],
+    "CC6.6": [
+        "Open SMTP",
+        "Open Oracle",
+        "Open Kibana",
+        "Open Hadoop HDFS NameNode Metadata Service",
+        "Open Hadoop HDFS NameNode WebUI",
+        "Open FTP",
+        "Open SSH",
+        "Open CIFS",
+        "Open DNS",
+        "Open RDP",
+        "Open Telnet",
+        "Open VNC Server",
+        "Open VNC Client",
+        "Open MySQL",
+        "Open NetBIOS",
+        "Open PostgreSQL",
+        "Open RPC",
+        "Open SMBoTCP",
+        "Open SQLServer",
+        "Open All Ports",
+        "Open Oracle Auto Data Warehouse",
+        "Open Salt",
+        "Open Docker"
+    ],
+    "CC6.7": [
+        "Storage Accounts HTTPS",
+        "Storage Accounts Encryption",
+        "VM OS Disk Encryption",
+        "VM Data Disk Encryption",
+        "Monitor Disk Encryption",
+        "HTTPS Only Enabled",
+        "Monitor SQL Encryption",
+        "Log Storage Encryption",
+        "TDE Protector Encrypted",
+        "Monitor Blob Encryption",
+        "File Service Encryption",
+        "Blob Service Encryption",
+        "LB HTTPS Only"
+    ],
+    "CC6.8": [
+        "Blob Service Immutable",
+        "Security Configuration Monitoring"
+    ],
+    "CC7.1": [
+        "Monitor Disk Encryption",
+        "Monitor VM Vulnerability",
+        "Monitor SQL Encryption",
+        "Monitor SQL Auditing",
+        "Security Configuration Monitoring",
+        "Monitor Blob Encryption",
+        "Monitor Endpoint Protection",
+        "Monitor System Updates",
+        "Monitor JIT Network Access",
+        "Monitor NSG Enabled"
+    ],
+    "CC7.2": [
+        "Security Configuration Monitoring",
+        "Security Policy Alerts Enabled",
+        "Security Solution Logging",
+        "Admin Security Alerts Enabled",
+        "Security Contacts Enabled"
+    ],
+    "CC7.3": [
+        "Admin Security Alerts Enabled",
+        "High Severity Alerts Enabled"
+    ],
+    "A1.1": [
+        "VM Availability Set Limit",
+        "Resources Usage Limits"
+    ],
+    "A1.2": [
+        "Log Profile Retention Policy"
+    ],
+    "CC2.1": [
+        "Security Configuration Monitoring",
+        "Admin Security Alerts Enabled"
+    ]
+}

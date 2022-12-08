@@ -1,0 +1,78 @@
+{
+    "CC6.1": [
+        "Open SSH",
+        "DB Publicly Accessible",
+        "Open All Ports",
+        "Private Endpoint",
+        "Private Access Enabled",
+        "CSEK Encryption Enabled",
+        "OS Login Enabled",
+        "Cluster Least Privilege",
+        "Service Account Admin",
+        "Service Account User",
+        "KMS User Separation",
+        "Corporate Emails Only",
+        "Basic Authentication Disabled"
+    ],
+    "CC6.2": [
+        "Service Account Key Rotation",
+        "Default Service Account",
+        "Service Account Admin",
+        "Service Account User",
+        "Corporate Emails Only"
+    ],
+    "CC6.3": [
+        "Service Account User",
+        "Service Account Separation",
+        "KMS User Separation"
+    ],
+    "CC6.6": [
+        "Open DNS",
+        "Open SSH",
+        "Open CIFS",
+        "Open FTP",
+        "Open Hadoop HDFS NameNode Metadata Service",
+        "Open Hadoop HDFS NameNode WebUI",
+        "Open Kibana",
+        "Open MySQL",
+        "Open NetBIOS",
+        "Open Oracle",
+        "Open PostgreSQL",
+        "Open RDP",
+        "Open RPC",
+        "Open SMBoTCP",
+        "Open SMTP",
+        "Open SQLServer",
+        "Open Telnet",
+        "Open VNC Client",
+        "Open VNC Server",
+        "Open Oracle Auto Data Warehouse",
+        "Open All Ports",
+        "Corporate Emails Only",
+        "Open Salt",
+        "Open Docker"
+    ],
+    "CC6.7": [
+        "CLB HTTPS Only",
+        "CSEK Encryption Enabled"
+    ],
+    "CC6.8": [
+        "Audit Configuration Logging"
+    ],
+    "CC7.1": [
+        "Monitoring Enabled"
+    ],
+    "A1.1": [
+        "Service Limits"
+    ],
+    "A1.2": [
+        "DB Automated Backups"
+    ],
+    "CC2.1": [
+        "Audit Configuration Logging",
+        "Audit Logging Enabled"
+    ],
+    "CC5.1": [
+        "Service Account Separation"
+    ]
+}
