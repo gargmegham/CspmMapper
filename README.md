@@ -29,7 +29,7 @@ python map_controls.py "SOC 2 Type II"
 ```
 
 ## File Structure
-
+```
 ├── AZURE_CSPM
 │ ├── SOC 2 Type II.json
 │ └── PCI.json
@@ -48,6 +48,7 @@ python map_controls.py "SOC 2 Type II"
 │ └── gcp_PCI.json
 ├── map_controls.py
 └── README.md
+```
 
 ## Contributing
 
