@@ -7,23 +7,20 @@ import requests
 
 BASE_API_URL = "https://api.cloudsploit.com"
 PROGRAMS = json.load(open("programs.json", "r"))["data"]
-GCP_KEY = ""
 CSPM_KEY = os.getenv("CSPM_KEY")
 CSPM_SECRET = os.getenv("CSPM_SECRET")
 
 
-def headers(
-    path: str,
-    api_key: str = None,
-    api_secret: str = None,
-    method: str = "GET",
-    body: str = "",
-) -> dict:
+def generate_signature(secret_bytes, string_bytes):
+    return hmac.new(secret_bytes, msg=string_bytes, digestmod=hashlib.sha256).hexdigest()
+
+
+def generate_headers(path, api_key=None, api_secret=None, method="GET", body=""):
     timestamp = str(int(time.time() * 1000))
     string = timestamp + method + path + body
     secret_bytes = bytes(api_secret, "utf-8")
     string_bytes = bytes(string, "utf-8")
-    sig = hmac.new(secret_bytes, msg=string_bytes, digestmod=hashlib.sha256).hexdigest()
+    sig = generate_signature(secret_bytes, string_bytes)
     headers = {
         "accept": "application/json",
         "x-api-key": api_key,
@@ -33,99 +30,73 @@ def headers(
     }
     return headers
 
-def latest_scan(
-    api_key: str = None, api_secret: str = None, key_id: int = None
-) -> dict:
-    """
-    Get latest scan id
-    Reference: https://cloudsploit.docs.apiary.io/#reference/scans/scans-collection/get-list-all-scans
-    """
-    path = f"/v2/scans"
-    if key_id == None:
-        url = f"{BASE_API_URL}{path}?limit=1"
-    else:
-        url = f"{BASE_API_URL}{path}?limit=1&key_id={key_id}"
-    my_headers = headers(path, api_key, api_secret)
-    response = requests.get(url, headers=my_headers)
+
+def get_latest_scan(api_key=None, api_secret=None, key_id=None):
+    path = "/v2/scans"
+    query_params = {"limit": 1}
+    if key_id is not None:
+        query_params["key_id"] = key_id
+    url = f"{BASE_API_URL}{path}"
+    my_headers = generate_headers(path, api_key, api_secret)
+    response = requests.get(url, headers=my_headers, params=query_params)
     if response.status_code == 200:
-        data = json.loads(response.text)
-        return data["data"][0]
+        data = response.json()
+        return data.get("data", [])[0] if data.get("data") else {}
     else:
         return {"status": response.status_code}
 
-def list_keys(api_key: str = None, api_secret: str = None) -> list | dict:
-    """
-    List all cloud accounts (keys)
-    """
 
+def list_keys(api_key=None, api_secret=None):
     path = "/v2/keys"
     url = f"{BASE_API_URL}{path}"
-    keys = []
-    response = requests.get(url, headers=headers(path, api_key, api_secret))
+    response = requests.get(url, headers=generate_headers(path, api_key, api_secret))
     if response.status_code == 200:
-        data = json.loads(response.text)
-        for key in data["data"]:
-            keys.append(
-                {
-                    "id": key["id"],
-                    "name": key["name"],
-                    "cloud": key["cloud"],
-                }
-            )
-        return keys
+        data = response.json()
+        return [
+            {
+                "id": key["id"],
+                "name": key["name"],
+                "cloud": key["cloud"],
+            }
+            for key in data.get("data", [])
+        ]
     else:
         return {"status": response.status_code}
 
-def list_programs(api_key: str = None, api_secret: str = None) -> list | dict:
 
+def list_programs(api_key=None, api_secret=None):
     path = "/v2/programs"
     url = f"{BASE_API_URL}{path}"
-    keys = []
-    response = requests.get(url, headers=headers(path, api_key, api_secret))
+    response = requests.get(url, headers=generate_headers(path, api_key, api_secret))
     if response.status_code == 200:
-        data = json.loads(response.text)
-        json.dump(data, open("ass.json", "w"))
-        print(data)
-        return keys
-    else:
-        return {"status": response.status_code}
-
-def compliance_report(
-    scan_id: int,
-    program_id: int = 1,
-    api_key: str = None,
-    api_secret: str = None,
-    summary: bool = False,
-):
-    """
-    Get compliance report for a compliance program
-
-    Reference: https://cloudsploit.docs.apiary.io/#reference/compliances/compliances-collection/get-list-all-compliances
-    """
-    path = f"/v2/compliances"
-    url = f"{BASE_API_URL}{path}?scan_id={scan_id}&program_id={program_id}"
-    if summary:
-        url += "&summary=compliance"
-    response = requests.get(url, headers=headers(path, api_key, api_secret))
-    if response.status_code == 200:
-        data = json.loads(response.text)
+        data = response.json()
         return data
     else:
         return {"status": response.status_code}
 
 
+def get_compliance_report(scan_id, program_id=1, api_key=None, api_secret=None, summary=False):
+    path = "/v2/compliances"
+    query_params = {"scan_id": scan_id, "program_id": program_id}
+    if summary:
+        query_params["summary"] = "compliance"
+    url = f"{BASE_API_URL}{path}"
+    response = requests.get(url, headers=generate_headers(path, api_key, api_secret), params=query_params)
+    if response.status_code == 200:
+        return response.json()
+    else:
+        return {"status": response.status_code}
+
+
 if __name__ == "__main__":
-    latest_scan_id = latest_scan(
-        CSPM_KEY,
-        CSPM_SECRET,
-        "47430",
-    )["id"]
+    latest_scan_id = get_latest_scan(CSPM_KEY, CSPM_SECRET, "47430").get("id")
 
     for program in PROGRAMS:
-        my_compliance_report_context = compliance_report(
+        my_compliance_report_context = get_compliance_report(
             latest_scan_id,
             program["id"],
             CSPM_KEY,
             CSPM_SECRET,
         )
-        json.dump(my_compliance_report_context, open(f"{program['name']}.json", "w"))
+        with open(f"{program['name']}.json", "w") as f:
+            json.dump(my_compliance_report_context, f)
