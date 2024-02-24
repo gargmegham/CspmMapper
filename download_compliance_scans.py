@@ -2,14 +2,14 @@ import hashlib
 import hmac
 import json
 import time
-
+import os
 import requests
 
 BASE_API_URL = "https://api.cloudsploit.com"
 PROGRAMS = json.load(open("programs.json", "r"))["data"]
 GCP_KEY = ""
-CSPM_KEY = "jSQhyiWLNBKiEZqoUq4lK3"
-CSPM_SECRET = "V6CmIMHUm9Z2fc0ROm9APQW9X4as4rLHOsQ"
+CSPM_KEY = os.getenv("CSPM_KEY")
+CSPM_SECRET = os.getenv("CSPM_SECRET")
 
 
 def headers(
